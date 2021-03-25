@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./icon/icon.png">
+    <title>Todo List - Projektbeschreibung</title>
+</head>
+<body>
+
+<header>
+    <h1>Todo List - Projektbeschreibung</h1>
+</header>
+
+<div class="table-of-content">
+    <h2>Inhaltsverzeichnis:</h2>
+    <ul>
+        <li>Allgemeine Informationen</li>
+        <li>Funktionen der Webapplikation</li>
+        <li>Code Konventionen die ich im Projekt angewendet habe</li>
+        <li>Design</li>
+        <li>Bugs die noch zu beheben gäbe, aber out of scope von dieser Arbeit ist</li>
+    </ul>
+</div>
+
+<main>
+    <section class="general-information">
+        <h2>Allgemeine Informationen</h2>
+        <p>
+            Die Webapplikation ist eine Todo Applikation, in der man sich als einen User anmelden kann und somit seine eigene
+            Todos erstellen und verwalten kann. Das Interface wurde möglichst einfach gestaltet, damit man schnell einen
+            Überblick über seine Todos erhält und nicht von irrelevanten Dingen abgelenkt wird. Die ganze Applikation
+            wurde auf Englisch umgesetzt, weshalb die HTML files auch auf lang="en" gesetzt wurden.
+        </p>
+    </section>
+    <section class="app-functions">
+        <h2>Funktionen der Webapplikation</h2>
+        <ol>
+            <li>Nutzerspezifität</li>
+            <li>Todos werden nach ihrer Erstellung direkt gespeichert</li>
+            <li>Todos können als abgeschlossen markiert werden</li>
+            <li>Todos können gelöscht werden</li>
+        </ol>
+        <h3>1. Nutzerspezifität</h3>
+        <p>
+            Die Todos werden Nutzerspezifisch angelegt. Das bedeutet, dass man als User nur seine eigenen Todos sehen kann
+            und nichts von Todos anderer Nutzer erfährt.
+            <br>
+            Beim einloggen werden die Inputfelder überprüft, ob man die ausgefüllt hat. Falls eines der Felder ausgelassen wurde,
+            passt sich das UI an und informiert den User, dass er/sie noch die fehlenden Informationen angeben muss.
+        </p>
+        <p>
+            In dieser Applikation wurden folgende zwei User angelegt:
+        </p>
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Passwort</th>
+            </tr>
+            <tr>
+                <td>user1</td>
+                <td>user1</td>
+            </tr>
+            <tr>
+                <td>user2</td>
+                <td>user2</td>
+            </tr>
+        </table>
+        <h3>2. Todos werden nach ihrer Erstellung direkt gespeichert</h3>
+        <p>
+            Alle Todos werden im H2 Database gespeichert, damit man auch nach einem erneuten login wieder seine Todos erhält.
+            Natürlich muss man eine Beschreibung für seine Todos angeben, damit man ein Todo erstellen kann. Deswegen wird
+            das UI auch dementsprechend reagieren, falls vergessen wurde eine Beschreibung anzugeben.
+        </p>
+        <h3>3. Todos können als abgeschlossen markiert werden</h3>
+        <p>
+            Mit einem klick auf ein Häkchen können Todos als abgeschlossen markiert werden und dementsprechen wird auch das UI
+            angepasst. Das Todo wird mit einer Linie durchgestrichen und die Opacity gesenkt, damit man den Fokus auf
+            die noch nicht abgeschlossenen Todos legen kann.
+        </p>
+        <h3>4. Todos können gelöscht werden</h3>
+        <p>
+            Mit einem klick auf den Abfallkorb, werden Todos sowohl von der Liste, als auch von der Datenbank entfernt.
+        </p>
+    </section>
+    <section class="coding-conventions">
+        <h2>Code Konventionen die ich im Projekt angewendet habe</h2>
+        <p>
+            In allen Klassen und Files habe ich mit Kommentaren explizit angegeben, ob und von wo ich kopierte Codes verwendet habe.
+            Da ich das Projekt <q>Contact List</q>, welches wir gemeinsam in den Vorlesungen bearbeitet hatten, habe ich dies als Vorlage verwendet.
+            Dementsprechend sehen auch die Codes ähnlich strukturiert aus, wobei Unterschiede vorhanden sind.
+            <br>
+            Es folgen genauere Erklärungen zu meinen Kommentaren.
+        </p>
+        <dl>
+            <dt>Kommentar: <em>// Struktur dieses Codes wurde vom [...] übernommen und angepasst</em></dt>
+            <dd>
+                Dies bedeutet, dass die Struktur zwar sehr ähnlich ist, jedoch die Implementierung stark auf die Anforderungen
+                meiner Applikation angepasst wurde und somit viele eigene entworfene Codes enthält.
+            </dd>
+            <dt>Kommentar: <em>// Codes in dieser Klasse wurden vom [...] kopiert und ein wenig angepasst</em></dt>
+            <dd>
+                Dies bedeutet, dass sehr viel Code 1:1 kopiert wurde und nur wenige Sachen angepasst wurden.<br>
+                Die Klasse WebSecurityConfig wäre so ein Kandidat (vermutlich sogar die einzige).
+            </dd>
+            <dt>Kommentar: <em>// Codes in dieser Klasse wurden vom [...] kopiert</em></dt>
+            <dd>
+                Dies bedeutet, dass die komplette Klasse 1:1 kopiert wurde.<br>
+                Die Klasse LoginController und das File login.ftlh sind die einzigen, die diesen Kommentar beinhalten.
+            </dd>
+        </dl>
+    </section>
+    <section class="design">
+        <h2>Design</h2>
+        <p>
+            Das Design wurde mit einfachen CSS propperties umgesetzt. Sehr oft wurde die <q>display: flex</q> funktion verwendet,
+            da dies die Strukturierung der Seite sehr viel vereinfacht. Mit kleinen extras wie <q>box-shadow</q> auf den Elementen
+            und <q>linear-gradient</q> im Background wird das Interface angenehmer dargestellt. Das CSS file wurde mit kommentaren
+            in drei Segmente unterteilt - global, index.ftlh und login.ftlh -.
+        </p>
+    </section>
+    <section class="bugs-to-fix">
+        <h2>Bugs die noch zu beheben gäbe, aber out of scope von dieser Arbeit ist</h2>
+        <p>
+            Wenn man ein Todo als abgeschlossen markiert und danach die Seite neu lädt, toggelt es die Markierung wieder um.
+            Sprich das Todo wird dann wieder als nicht abgeschlossen markiert. Das gleiche passiert auch umgekehrt, sprich
+            man markiert es als nicht abgeschlossen, welches nach einem Refresh wieder als abgeschlossen markiert wird.
+            Dieses Problem könnte mit einem invisible Inputfeld gelöst werden, welches einen zufälligen Wert erhält, sobald
+            man den Haken manuell klickt. Somit würde man erkennen, dass es sich um einen Refresh handelt, wenn der Wert der gleiche ist wie zuvor.
+            <br>
+            PS: Alle anderen Refresh Probleme konnten jedoch behoben werden! (probieren Sie sie aus)
+        </p>
+    </section>
+</main>
+
+<footer>
+    <h3>Zum Schluss</h3>
+    <p>Viel Spass beim ausprobieren meiner Webapplikation :)</p>
+</footer>
+
+</body>
+</html>
